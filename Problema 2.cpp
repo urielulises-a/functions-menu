@@ -12,7 +12,7 @@ void es_par(){
 	
 	int num;
 	
-	printf("Ingresa 10 numeros enteros: \n");
+	printf("\nIngresa 10 numeros enteros: \n");
 	
 	for (int i = 0; i<10; i++){
 		
@@ -31,7 +31,7 @@ void es_par(){
 void perfectos(){
 	system("cls");
 	
-	printf("Los numeros perfectos del uno al 100: \n");
+	printf("\nLos numeros perfectos del uno al 100 son: \n");
 	int div, n, j = 1; 
 	
 	for (int i = 2; i<100; i++){
@@ -45,12 +45,13 @@ void perfectos(){
 					
 				if(div == n && n!= 24){ //El programa muestra el 24 a pesar de no ser perfecto
 						
-					printf("%i ", n);
+					printf(" %i ", n);
 				} 
 			}
 		}
 		j = 0; //Esta variable recorre los numeros hasta alcanzar a i
 	}
+	printf("\n");
 }
 void invert(){
 	system("cls");
@@ -59,13 +60,14 @@ void invert(){
 	
 	std::string::reverse_iterator invert; 
 	
-	cout<<"Ingresa 4 numeros: "<<endl;
+	cout<<"\nIngresa 4 numeros: "<<endl;
 	cin>>normal;
 	//Estas funciones recorren el vector de final a incio intercambiando posiciones
 	for (invert= normal.rbegin(); invert!= normal.rend(); invert++){
 		
-		cout<<*invert;
-	}	
+		cout<<*invert;;
+	}
+	cout<<endl;
 }
 
 int main(){
@@ -82,11 +84,15 @@ int main(){
 		
 		switch (accion){
 			
-			case 'a': es_par();
-			case 'b': perfectos();
-			case 'c': invert();
+			case 'a': es_par(); scanf("%c", &accion);
+			break;
+			case 'b': perfectos();scanf("%c", &accion);
+			break;
+			case 'c': invert(); scanf("%c", &accion);
+			break;
 			case 's': system("cls"); printf("Salida exitosa. \n"); break;
 			default: printf("Opcion incorrecta.");
+			break;
 		}
 		
 	}while (accion!= 's');
